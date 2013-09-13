@@ -4,18 +4,18 @@ var bookTemplate = _.template($('#templates .book').html());
 // Build books array.
 var books = [
     {
-        title: 'Book 1',
-        author: 'Author 1',
+        title: 'Lord of the Rings',
+        author: 'J. R. R. Tolkien',
         status: 'available'
     },
     {
-        title: 'Book 2',
-        author: 'Author 2',
+        title: 'Harry Potter',
+        author: 'J. K. Rowling',
         status: 'available'
     },
     {
-        title: 'Book 3',
-        author: 'Author 3',
+        title: 'Hitchhiker\'s Guide to the Galaxy',
+        author: 'Douglas Adams',
         status: 'available'
     }
 ];
@@ -30,3 +30,11 @@ var renderLibrary = function () {
 
 // Call renderLibrary on load
 renderLibrary();
+
+$('#submit').on('click', function(e) {
+    e.preventDefault();
+    var title   = $('#title').val(),
+        author  = $('#author').val(),
+        newBook = { title: title, author: author, status: 'available' };
+    $('#library').append(bookTemplate(newBook));
+});
