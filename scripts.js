@@ -2,8 +2,18 @@ var bookTemplate = _.template($('#templates .book').html());
 
 var book = [
     {
-        title: '[TITLE]',
-        author: '[AUTHOR]',
+        title: 'Book 1',
+        author: 'Author 1',
+        status: 'available'
+    },
+    {
+        title: 'Book 2',
+        author: 'Author 2',
+        status: 'available'
+    },
+    {
+        title: 'Book 3',
+        author: 'Author 3',
         status: 'available'
     }
 ];
