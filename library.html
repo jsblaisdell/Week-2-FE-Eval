@@ -1,22 +1,7 @@
 <html>
 <head>
   <title>Week 2 Frontend Project</title>
-  <style type="text/css">
-    #templates { display: none; }
-    small { position: fixed; bottom: 4px; right: 4px; }
-    #library .book {
-      background: #ccc;
-      width: 200px;
-      float: left;
-      padding: 1px 20px;
-    }
-    #library .book h3 {
-      font-style: italic;
-    }
-    #library .book h5 {
-      font-weight: normal;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -26,14 +11,18 @@
 <div id="library"></div>
 
 <div id="templates">
-
+    <script class="book" type="text/template">
+        <div class="book">
+            <h3><%= title %></h3>
+            <h5><%= author %></h5>
+            <h5>Status: <%= status %></h5>
+        </div>
+    </script>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-<script type="text/javascript">
-  // TODO
-</script>
+<script src="scripts.js"></script>
 
 <small>It's back.</small>
 
