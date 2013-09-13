@@ -1,6 +1,8 @@
+// Build underscore.js template.
 var bookTemplate = _.template($('#templates .book').html());
 
-var book = [
+// Build books array.
+var books = [
     {
         title: 'Book 1',
         author: 'Author 1',
@@ -18,7 +20,13 @@ var book = [
     }
 ];
 
-for ( i = 0; i < book.length; i++ ) {
-    var newBookHtml = bookTemplate(book[i]);
-    $('#library').append(newBookHtml);
-}
+// Render books into HTML.
+var renderLibrary = function () {
+    for ( i = 0; i < books.length; i++ ) {
+        var newBookHtml = bookTemplate(books[i]);
+        $('#library').append(newBookHtml);
+    }
+};
+
+// Call renderLibrary on load
+renderLibrary();
