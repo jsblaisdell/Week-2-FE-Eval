@@ -31,10 +31,13 @@ var renderLibrary = function () {
 // Call renderLibrary on load
 renderLibrary();
 
+// Submit a new book on click
 $('#submit').on('click', function(e) {
     e.preventDefault();
     var title   = $('#title').val(),
         author  = $('#author').val(),
         newBook = { title: title, author: author, status: 'available' };
-    $('#library').append(bookTemplate(newBook));
+    books.push(newBook);
+    $('#library').empty();
+    renderLibrary();
 });
